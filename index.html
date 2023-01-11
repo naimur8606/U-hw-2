@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .container{
+            
+            padding: 20px 10px;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><h2 id="Result">00</h2></div>
+    <div class="container"><input id="input" type="text"></div>
+    <div class="container"><button class="btn btn-success" id="enter" type="submit">Enter</button></div>
+    <script>
+        const EnterBtn = document.getElementById("enter");
+        EnterBtn.addEventListener("click",function(){
+            const Input = document.getElementById("input").value;
+            const inputNumber = parseFloat(Input);
+            const Result = document.getElementById("Result").innerText;
+            var number = inputNumber;
+            //var result = [remainder, number];
+            while(number>10){
+                if(number>10){
+                    while(number){
+                        remainder = number%10;
+                        document.getElementById("Result").innerText = remainder;
+                        number = number/10;
+                        number = Math.floor(number);
+                    }
+                }
+                else{
+                    document.getElementById("Result").innerText = number;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
