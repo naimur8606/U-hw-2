@@ -31,15 +31,16 @@
                 if(number>10){
                     while(number){
                         remainder = number%10;
-                        document.getElementById("Result").innerText = remainder;
+                        result.push(remainder);
                         number = number/10;
                         number = Math.floor(number);
                     }
                 }
                 else{
-                    document.getElementById("Result").innerText = number;
+                    result.push(number);
                 }
             }
+            document.getElementById("Result").innerText = result;
         })
     </script>
 </body>
